@@ -19,3 +19,9 @@ It includes basic to intermediate level web pages built while improving my front
 - Layout experiments  
 - UI design practice using HTML
 
+## 🎯 Purpose
+The main goal of this repository is:
+- To improve my frontend development skills  
+- To practice clean and structured HTML code  
+- To build a strong foundation for web development
+
