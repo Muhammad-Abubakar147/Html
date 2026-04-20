@@ -10,4 +10,12 @@ It includes basic to intermediate level web pages built while improving my front
 
 ---
 ## 🛠️ Technologies Used
-- HTML5  
+- HTML5
+
+- ## 📁 What You Will Find Here
+- Simple web pages  
+- Practice assignments  
+- Mini projects  
+- Layout experiments  
+- UI design practice using HTML
+
