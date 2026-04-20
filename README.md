@@ -25,3 +25,10 @@ The main goal of this repository is:
 - To practice clean and structured HTML code  
 - To build a strong foundation for web development
 
+## 🚀 Future Plans
+- Add CSS styling to improve UI  
+- Include JavaScript for interactivity  
+- Build complete responsive websites  
+- Work on real-world frontend projects
+
+---
