@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Emaan Zafar | Zoology & AI Portfolio</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-dark: #0a0c12;
+      --surface-dark: rgba(18, 22, 32, 0.75);
+      --card-dark: rgba(25, 30, 42, 0.8);
+      --text-primary-dark: #f0f3fa;
+      --text-secondary-dark: #b6c2e6;
+      --accent: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.45);
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --shadow-sm: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
+      --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    body.light {
+      --bg-dark: #f4f7fc;
+      --surface-dark: rgba(255, 255, 255, 0.7);
+      --card-dark: rgba(255, 255, 255, 0.85);
+      --text-primary-dark: #121826;
+      --text-secondary-dark: #2d3a4e;
+      --border-glass: rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary-dark);
+      transition: background 0.25s ease, color 0.2s;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    /* glassmorphic base */
+    .glass-card, nav, .skill-cat, .edu-card, .achievement-card, .project-preview-card, .contact-form-container, .project-card {
+      background: var(--surface-dark);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      border-radius: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.3s;
+    }
+
+    .glass-card:hover, .skill-cat:hover, .project-preview-card:hover, .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--accent);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      margin: 1rem 2rem 0 2rem;
+      border-radius: 3rem;
+      background: var(--surface-dark);
+      backdrop-filter: blur(16px);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, #a5b4fc, #818cf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-primary-dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--text-primary-dark);
+      transition: transform 0.2s;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2rem 2rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin: 3rem 0 4rem;
+    }
+    .hero-img {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-img img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 35% 65% 70% 30% / 44% 30% 70% 56%;
+      box-shadow: 0 25px 35px -15px rgba(0,0,0,0.4);
+      border: 3px solid var(--accent);
+      transition: transform 0.4s;
+    }
+    .hero-img img:hover {
+      transform: scale(1.02) rotate(1deg);
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .hero-content .highlight {
+      background: linear-gradient(135deg, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .social-icons {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.8rem 0;
+    }
+    .social-icons a {
+      color: var(--text-secondary-dark);
+      font-size: 1.6rem;
+      transition: all 0.2s;
+    }
+    .social-icons a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+    .skill-cat {
+      padding: 1.6rem;
+      border-radius: 1.8rem;
+    }
+    .skill-cat h3 i {
+      margin-right: 0.5rem;
+      color: var(--accent);
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+    .skill-tags span {
+      background: var(--card-dark);
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    /* Education + Achievements */
+    .edu-card, .achievement-card {
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 1.5rem;
+    }
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 800px) {
+      .two-col-grid { grid-template-columns: 1fr; }
+      .hero { flex-direction: column; text-align: center; }
+      nav { margin: 1rem; }
+      .container { padding: 1rem; }
+    }
+    /* projects preview cards */
+    .projects-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .project-preview-card {
+      padding: 1.5rem;
+      border-radius: 1.8rem;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.8rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+    }
+    .contact-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    .contact-form-container {
+      flex: 1;
+      padding: 2rem;
+    }
+    .contact-info {
+      flex: 0.8;
+      padding: 2rem;
+      border-radius: 2rem;
+      background: var(--surface-dark);
+      backdrop-filter: blur(8px);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.9rem;
+      margin: 0.6rem 0;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-glass);
+      border-radius: 1.2rem;
+      color: var(--text-primary-dark);
+      font-family: inherit;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--border-glass);
+      font-size: 0.9rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .project-card {
+      padding: 1.8rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-tech {
+      margin-top: auto;
+      font-size: 0.8rem;
+      background: var(--card-dark);
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      width: fit-content;
+    }
+    .feature-list {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    .feature-list li {
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 { font-size: 2rem; }
+      .nav-links { gap: 1rem; }
+      .logo { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><i class="fas fa-dna"></i> EmaanZ</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+  </div>
+</nav>
+
+<main class="container">
+  <!-- Hero Section -->
+  <div class="hero fade-up">
+    <div class="hero-img">
+      <img src="https://ui-avatars.com/api/?background=6366f1&color=fff&bold=true&size=200&name=Emaan+Zafar&length=2&rounded=true" alt="Emaan Zafar">
+    </div>
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="highlight">Emaan Zafar</span></h1>
+      <p style="font-size: 1.2rem; margin: 1rem 0;">🦋 Zoology student | 📊 Data Science & AI Enthusiast | 🧠 ML Learner</p>
+      <p>Passionate about merging biological intelligence with data-driven AI to solve real-world problems. I love analyzing patterns, building ML models, and teaching tech with simplicity.</p>
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:emaan@example.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="fade-up">
+    <div class="section-title"><i class="fas fa-code"></i> Technical Arsenal</div>
+    <div class="skills-grid">
+      <div class="skill-cat"><h3><i class="fab fa-html5"></i> Web Development</h3><div class="skill-tags"><span>HTML5</span><span>CSS3</span><span>Python</span></div></div>
+      <div class="skill-cat"><h3><i class="fas fa-chart-line"></i> Data Science</h3><div class="skill-tags"><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span></div></div>
+      <div class="skill-cat"><h3><i class="fas fa-brain"></i> ML / DL</h3><div class="skill-tags"><span>Machine Learning</span><span>Deep Learning</span><span>Scikit-learn</span></div></div>
+      <div class="skill-cat"><h3><i class="fas fa-laptop-code"></i> Tools</h3><div class="skill-tags"><span>VS Code</span><span>Jupyter</span><span>Colab</span><span>PyCharm</span></div></div>
+      <div class="skill-cat"><h3><i class="fab fa-git-alt"></i> Version Control</h3><div class="skill-tags"><span>Git</span><span>GitHub</span></div></div>
+      <div class="skill-cat"><h3><i class="fas fa-palette"></i> Design & Productivity</h3><div class="skill-tags"><span>Figma</span><span>Canva</span><span>CapCut</span><span>Notion</span><span>Adobe</span></div></div>
+    </div>
+  </div>
+
+  <!-- Education & Achievements two columns -->
+  <div class="two-col-grid fade-up">
+    <div>
+      <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+      <div class="edu-card"><h3>🎓 BS Zoology (Animal Science)</h3><p>Government College University | Current</p><small>Integrating biological systems with AI, research methodologies, and scientific thinking.</small></div>
+      <div class="edu-card"><h3>📘 FSc Pre-Medical (Biology)</h3><p>Government Graduate College of Science | 2nd Division</p><small>Foundation in core sciences, analytical thinking, and living systems.</small></div>
+      <div class="edu-card"><h3>📚 Matriculation (Biology)</h3><p>MC High School Samnabad | 1st Division</p><small>Curiosity & discipline, strong interest in biological sciences.</small></div>
+    </div>
+    <div>
+      <div class="section-title"><i class="fas fa-trophy"></i> Achievements</div>
+      <div class="achievement-card"><i class="fas fa-award" style="color: gold;"></i> <strong>Sylor Academy CS105</strong> — 88.94%</div>
+      <div class="achievement-card"><i class="fas fa-puzzle-piece"></i> <strong>Harvard CS50x Puzzle Day 2026</strong> — 🥇 1st Place (10/10 puzzles)</div>
+    </div>
+  </div>
+
+  <!-- Projects Preview -->
+  <div class="fade-up">
+    <div class="section-title"><i class="fas fa-laptop-code"></i> Featured Projects</div>
+    <div class="projects-preview">
+      <div class="project-preview-card">
+        <i class="fas fa-utensils fa-2x" style="color: var(--accent);"></i>
+        <h3>Restaurant Management App</h3>
+        <p>Efficient restaurant operations: order handling, menu management, customer flow.</p>
+        <span class="project-tech">Python</span>
+      </div>
+      <div class="project-preview-card">
+        <i class="fas fa-users fa-2x" style="color: var(--accent);"></i>
+        <h3>Student Management System</h3>
+        <p>CRUD operations, organized data handling, student records made simple.</p>
+        <span class="project-tech">Python</span>
+      </div>
+      <div class="project-preview-card">
+        <i class="fas fa-chart-simple fa-2x" style="color: var(--accent);"></i>
+        <h3>Data Analysis Dashboard</h3>
+        <p>Clean datasets, interactive visualizations, insights generation.</p>
+        <span class="project-tech">Pandas, Matplotlib, Seaborn</span>
+      </div>
+    </div>
+    <div style="text-align: center; margin: 1rem 0 2rem;">
+      <a href="projects.html" class="btn">View All Projects →</a>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="fade-up">
+    <div class="section-title"><i class="fas fa-envelope-open-text"></i> Let’s Connect</div>
+    <div class="contact-grid">
+      <div class="contact-form-container">
+        <form id="contactForm">
+          <input type="text" placeholder="Your Name" id="nameInput" required>
+          <input type="email" placeholder="Email Address" id="emailInput" required>
+          <textarea rows="4" placeholder="Message..." id="msgInput" required></textarea>
+          <button type="submit" class="btn" style="margin-top: 0.5rem;">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
+        <p id="formFeedback" style="margin-top: 1rem; font-size:0.9rem;"></p>
+      </div>
+      <div class="contact-info">
+        <h3><i class="fas fa-address-card"></i> Reach out</h3>
+        <p><i class="fas fa-envelope"></i> emaan.zafar@example.com</p>
+        <p><i class="fab fa-github"></i> github.com/emaandatascience</p>
+        <p><i class="fab fa-linkedin"></i> linkedin.com/in/emaan-zafar</p>
+        <p style="margin-top: 1rem;">🌍 Open for collaboration, research, and AI x Biology ideas.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Emaan Zafar — Zoology meets AI. All visions blend.</p>
+</footer>
+
+<script>
+  // Theme Toggle with persistence
+  const toggleBtn = document.getElementById('themeToggle');
+  const body = document.body;
+  const setTheme = (mode) => {
+    if(mode === 'light') body.classList.add('light');
+    else body.classList.remove('light');
+    localStorage.setItem('theme', mode);
+    const icon = toggleBtn.querySelector('i');
+    if(mode === 'light') icon.className = 'fas fa-sun';
+    else icon.className = 'fas fa-moon';
+  }
+  const savedTheme = localStorage.getItem('theme');
+  if(savedTheme === 'light') setTheme('light');
+  else setTheme('dark');
+  toggleBtn.addEventListener('click', () => {
+    const isLight = body.classList.contains('light');
+    setTheme(isLight ? 'dark' : 'light');
+  });
+
+  // Scroll animations (Intersection Observer)
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  fadeElements.forEach(el => observer.observe(el));
+
+  // Contact form demo
+  const form = document.getElementById('contactForm');
+  const feedback = document.getElementById('formFeedback');
+  if(form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('nameInput').value.trim();
+      const email = document.getElementById('emailInput').value.trim();
+      const msg = document.getElementById('msgInput').value.trim();
+      if(name && email && msg) {
+        feedback.innerHTML = '<span style="color: #4ade80;"><i class="fas fa-check-circle"></i> Message sent! (demo) I’ll reach out soon.</span>';
+        form.reset();
+        setTimeout(() => feedback.innerHTML = '', 4000);
+      } else {
+        feedback.innerHTML = '<span style="color: #f87171;">Please fill all fields.</span>';
+      }
+    });
+  }
+  // Smooth anchor nav for internal but no hash needed
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
