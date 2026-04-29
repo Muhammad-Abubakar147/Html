@@ -1,0 +1,34 @@
+# 🌐 HTML Project Repository
+
+Welcome to my HTML repository! 🚀  
+This repository contains my practice and projects built using **HTML (HyperText Markup Language)**.
+
+---
+## 📌 About This Repository
+This repo is created to store and organize my HTML learning journey and practice projects.  
+It includes basic to intermediate level web pages built while improving my frontend development skills.
+
+---
+## 🛠️ Technologies Used
+- HTML5
+
+- ## 📁 What You Will Find Here
+- Simple web pages  
+- Practice assignments  
+- Mini projects  
+- Layout experiments  
+- UI design practice using HTML
+
+## 🎯 Purpose
+The main goal of this repository is:
+- To improve my frontend development skills  
+- To practice clean and structured HTML code  
+- To build a strong foundation for web development
+
+## 🚀 Future Plans
+- Add CSS styling to improve UI  
+- Include JavaScript for interactivity  
+- Build complete responsive websites  
+- Work on real-world frontend projects
+
+---
