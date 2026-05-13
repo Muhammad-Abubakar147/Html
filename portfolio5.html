@@ -738,6 +738,59 @@ footer {
   .achievements-grid { grid-template-columns:1fr; }
   .featured-projects-grid { grid-template-columns:1fr; }
 }
+
+
+
+
+/* Typing Animation */
+.typing-text{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 12px 0 18px;
+  color: #fff;
+}
+
+.typing-text span{
+  position: relative;
+  color: #38bdf8;
+}
+
+.typing-text span::before{
+  content: "ML Engineer";
+  animation: words 12s infinite;
+}
+
+.typing-text span::after{
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  background: #0f172a; /* background color */
+  border-left: 2px solid #38bdf8;
+  right: -8px;
+  animation: typing 3s steps(14) infinite;
+}
+
+@keyframes words{
+  0%, 33%{
+    content: "ML Engineer";
+  }
+  34%, 66%{
+    content: "AI Engineer";
+  }
+  67%, 100%{
+    content: "Data Scientist";
+  }
+}
+
+@keyframes typing{
+  0%, 10%, 100%{
+    width: 0;
+  }
+  40%, 60%{
+    width: calc(100% + 8px);
+  }
+}
 </style>
 </head>
 <body>
@@ -805,7 +858,7 @@ footer {
         </div>
         <div class="badge-float">🐍 Python</div>
         <div class="badge-float">📊 Data Science</div>
-        <div class="badge-float">🤖 Machine Learning</div>
+        <!-- <div class="badge-float">🤖 Machine Learning</div> -->
         <div class="badge-float">🧠 Deep Learning</div>
       </div>
     </div>
@@ -817,14 +870,21 @@ footer {
         Available for Opportunities
       </div>
       <h1 class="hero-name">
-        Hi, I'm a<br/>
-        <span class="gradient-name">Data Science</span><br/>
+        Hi, I'm<br/>
+        <span class="gradient-name">Muhammad Abubakar</span><br/>
         Enthusiast
       </h1>
-      <p class="hero-title">
-        <strong>Zoology Student</strong> × <strong>Python Developer</strong><br/>
-        Machine Learning · Deep Learning · Data Analysis
-      </p>
+
+        <!-- Typing Animation -->
+  <h2 class="typing-text">
+    I'm a <span></span>
+  </h2>
+
+  <p class="hero-title">
+    <strong>Zoology Student</strong> × <strong>Python Developer</strong><br/>
+    Machine Learning · Deep Learning · Data Analysis
+  </p>
+
       <p class="hero-bio">
         I'm a Zoology student with a strong passion for Data Science, Machine Learning, and Deep Learning.
         My goal is to combine biological knowledge with data-driven AI solutions to solve real-world problems.
@@ -931,6 +991,25 @@ footer {
           <span class="skill-tag">GitHub</span>
         </div>
       </div>
+
+      <!-- Ai tools -->
+<div class="skill-card reveal" style="transition-delay:0.3s">
+  <div class="skill-card-header">
+    <div class="skill-icon-wrap" style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.2))">🤖</div>
+    <div class="skill-card-title">AI Tools</div>
+  </div>
+  <div class="skill-tags">
+    <span class="skill-tag">ChatGPT</span>
+    <span class="skill-tag">Grok</span>
+    <span class="skill-tag">Claude</span>
+    <span class="skill-tag">Gamma</span>
+    <span class="skill-tag">Perplexity</span>
+    <span class="skill-tag">DeepSeek</span>
+    <span class="skill-tag">Nano Banana</span>
+    <span class="skill-tag">Manus</span>
+  </div>
+</div>
+
 
       <!-- Other Tools -->
       <div class="skill-card reveal" style="transition-delay:0.35s">
@@ -1196,7 +1275,13 @@ footer {
       <div class="footer-brand">Portfolio<span style="color:var(--accent-1)">.</span></div>
       <p class="footer-copy" style="margin-top:0.4rem;">Zoology × Data Science × Machine Learning</p>
     </div>
-    <p class="footer-copy">© 2025 · Crafted with 🧬 and 🐍 · All rights reserved</p>
+    <p class="footer-copy">
+  © <span id="year"></span> · Crafted with 🧬 and 🐍 · All rights reserved
+</p>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
     <div class="footer-links">
       <a href="#hero">Home</a>
       <a href="#skills">Skills</a>
