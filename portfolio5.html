@@ -309,21 +309,60 @@ section { position:relative; z-index:1; }
 }
 .hero-avatar-emoji { font-size:120px; user-select:none; }
 /* Floating tech badges */
-.badge-float {
-  position:absolute; padding:0.4rem 0.85rem;
-  background:var(--glass); border:1px solid var(--glass-border);
-  border-radius:var(--radius-sm); backdrop-filter:blur(10px);
-  font-size:0.75rem; font-weight:600; white-space:nowrap;
-  box-shadow:var(--shadow-card);
-  animation:badgeFloat 4s ease-in-out infinite;
+.badge-float{
+  position: absolute;
+  padding: 0.4rem 0.85rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(10px);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: var(--shadow-card);
+  animation: badgeFloat 4s ease-in-out infinite;
+  z-index: 10;
 }
-.badge-float:nth-child(3) { top:5%; right:-15%; animation-delay:0s; color:var(--accent-3); }
-.badge-float:nth-child(4) { bottom:20%; right:-20%; animation-delay:1s; color:var(--accent-green); }
-.badge-float:nth-child(5) { top:30%; left:-22%; animation-delay:2s; color:var(--accent-2); }
-.badge-float:nth-child(6) { bottom:8%; left:-12%; animation-delay:0.5s; color:var(--accent-pink); }
-@keyframes badgeFloat {
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-8px);}
+
+/* Python */
+.badge-float:nth-child(3){
+  top: 5%;
+  right: -15%;
+  animation-delay: 0s;
+  color: var(--accent-3);
+}
+
+/* Data Science */
+.badge-float:nth-child(4){
+  bottom: 25%;
+  right: -20%;
+  animation-delay: 1s;
+  color: var(--accent-green);
+}
+
+/* Machine Learning */
+.badge-float:nth-child(5){
+  top: 25%;
+  left: -5%;   /* fixed */
+  animation-delay: 2s;
+  color: var(--accent-2);
+}
+
+/* Deep Learning */
+.badge-float:nth-child(6){
+  bottom: 5%;
+  left: -10%;
+  animation-delay: 0.5s;
+  color: var(--accent-pink);
+}
+
+@keyframes badgeFloat{
+  0%,100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-8px);
+  }
 }
 
 /* Hero text side */
@@ -748,6 +787,7 @@ footer {
   font-weight: 700;
   margin: 12px 0 18px;
   color: #fff;
+  min-height: 40px;
 }
 
 .typing-text span{
@@ -755,22 +795,22 @@ footer {
   color: #38bdf8;
 }
 
+/* text changing */
 .typing-text span::before{
   content: "ML Engineer";
-  animation: words 12s infinite;
+  animation: words 9s infinite;
 }
 
+/* cursor only (FIXED) */
 .typing-text span::after{
-  content: "";
+  content: "|";
   position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  background: #0f172a; /* background color */
-  border-left: 2px solid #38bdf8;
-  right: -8px;
-  animation: typing 3s steps(14) infinite;
+  right: -10px;
+  animation: blink 0.7s infinite;
+  color: #38bdf8;
 }
 
+/* words animation */
 @keyframes words{
   0%, 33%{
     content: "ML Engineer";
@@ -783,12 +823,10 @@ footer {
   }
 }
 
-@keyframes typing{
-  0%, 10%, 100%{
-    width: 0;
-  }
-  40%, 60%{
-    width: calc(100% + 8px);
+/* cursor blink */
+@keyframes blink{
+  50%{
+    opacity: 0;
   }
 }
 </style>
@@ -855,35 +893,35 @@ footer {
           <!-- Replace src below with your actual photo -->
            <img src="/Abubakar.jpeg" alt="Profile pic">
           <span class="hero-avatar-emoji"></span>
-        </div>
-        <div class="badge-float">🐍 Python</div>
-        <div class="badge-float">📊 Data Science</div>
-        <!-- <div class="badge-float">🤖 Machine Learning</div> -->
-        <div class="badge-float">🧠 Deep Learning</div>
       </div>
-    </div>
-
+<div class="badge-float">🐍 Zoologist</div>
+<div class="badge-float">📊 Data Science</div>
+<div class="badge-float">🤖 Machine Learning</div>
+<div class="badge-float">🐍 Python Developer</div>
+<div class="badge-float">🤖 Web devloper</div>
+<div class="badge-float">🧠 Deep Learning</div>
+</div>
+</div>
     <!-- Text Side -->
     <div class="hero-text-side reveal-right">
       <div class="hero-label">
         <div class="hero-label-dot"></div>
         Available for Opportunities
       </div>
-      <h1 class="hero-name">
-        Hi, I'm<br/>
-        <span class="gradient-name">Muhammad Abubakar</span><br/>
-        Enthusiast
-      </h1>
+     <h1 class="hero-name">
+  Hi, I'm<br/>
+  <span class="gradient-name">Muhammad&nbsp;Abubakar</span>
+</h1>
 
         <!-- Typing Animation -->
   <h2 class="typing-text">
-    I'm a <span></span>
-  </h2>
+  I'm a <span></span>
+</h2>
 
-  <p class="hero-title">
-    <strong>Zoology Student</strong> × <strong>Python Developer</strong><br/>
-    Machine Learning · Deep Learning · Data Analysis
-  </p>
+<p class="hero-title">
+  <strong>Zoology Student</strong> × <strong>Python Developer</strong><br/>
+  Machine Learning · Deep Learning · Data Analysis 
+</p>
 
       <p class="hero-bio">
         I'm a Zoology student with a strong passion for Data Science, Machine Learning, and Deep Learning.
@@ -962,6 +1000,9 @@ footer {
         <div class="skill-tags">
           <span class="skill-tag">Machine Learning</span>
           <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">Pytorch</span>
+          <span class="skill-tag">Tensor flow</span>
+          <span class="skill-tag">Scikit-learn</span>
           <span class="skill-tag">Neural Networks</span>
         </div>
       </div>
@@ -977,6 +1018,7 @@ footer {
           <span class="skill-tag">Jupyter Notebook</span>
           <span class="skill-tag">Google Colab</span>
           <span class="skill-tag">PyCharm</span>
+          <span class="skill-tag">Antigravity</span>
         </div>
       </div>
 
@@ -1205,7 +1247,7 @@ footer {
       <!-- Info -->
       <div class="reveal">
         <h3>Say Hello 👋</h3>
-        <p>Whether you have a project idea, a collaboration in mind, or just want to talk Data Science — my inbox is always open. I'll get back to you as soon as possible!</p>
+        <p>Let’s build something impactful together. Whether it’s AI, Machine Learning, Data Science, or an exciting collaboration — feel free to reach out. I’m always open to meaningful conversations and innovative opportunities.</p>
         <div class="contact-links">
           <a href="brandmirza702@gmail.com" class="contact-link-item">
             <div class="contact-link-icon" style="background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(139,92,246,0.2))">
