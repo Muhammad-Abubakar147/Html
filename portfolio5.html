@@ -313,7 +313,7 @@ section { position:relative; z-index:1; }
   position: absolute;
   padding: 0.4rem 0.85rem;
   background: var(--glass);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--glass-border);  
   border-radius: var(--radius-sm);
   backdrop-filter: blur(10px);
   font-size: 0.75rem;
@@ -395,7 +395,7 @@ section { position:relative; z-index:1; }
   font-weight:500; margin-bottom:1.5rem;
   line-height:1.6;
 }
-.hero-title strong { color:var(--accent-3); font-weight:600; }
+.hero-title strong { color:var(--accent-1); font-weight:600; }
 .hero-bio {
   color:var(--text-secondary); font-size:0.95rem;
   line-height:1.8; margin-bottom:2rem;
@@ -547,7 +547,7 @@ section { position:relative; z-index:1; }
 .edu-desc { color:var(--text-secondary); font-size:0.88rem; line-height:1.7; }
 
 /* ============================================================
-   ACHIEVEMENTS SECTION
+   ACHIEVEMENTS SECTION 
 ============================================================ */
 #achievements { padding:100px 0; background:var(--bg-secondary); }
 
@@ -780,53 +780,62 @@ footer {
 
 
 
-
-/* Typing Animation */
-.typing-text{
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 12px 0 18px;
-  color: #fff;
-  min-height: 40px;
+.typing-text {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
 }
 
-.typing-text span{
+.typing-text span {
   position: relative;
   color: #38bdf8;
 }
 
-/* text changing */
-.typing-text span::before{
+.typing-text span::before {
   content: "ML Engineer";
-  animation: words 9s infinite;
+  animation: words 12s infinite;
 }
 
-/* cursor only (FIXED) */
-.typing-text span::after{
-  content: "|";
+.typing-text span::after {
+  content: "";
   position: absolute;
-  right: -10px;
-  animation: blink 0.7s infinite;
-  color: #38bdf8;
+  right: -8px;
+  width: calc(100% + 8px);
+  height: 100%;
+  background: #000; /* same as background color */
+  border-left: 2px solid #38bdf8;
+  animation: typing 3s steps(14) infinite;
 }
 
-/* words animation */
-@keyframes words{
-  0%, 33%{
+/* Typing effect */
+@keyframes typing {
+  0%,
+  10%,
+  100% {
+    width: calc(100% + 8px);
+  }
+
+  40%,
+  60% {
+    width: 0;
+  }
+}
+
+/* Change words */
+@keyframes words {
+  0%,
+  33% {
     content: "ML Engineer";
   }
-  34%, 66%{
-    content: "AI Engineer";
-  }
-  67%, 100%{
-    content: "Data Scientist";
-  }
-}
 
-/* cursor blink */
-@keyframes blink{
-  50%{
-    opacity: 0;
+  34%,
+  66% {
+    content: "Python Developer";
+  }
+
+  67%,
+  100% {
+    content: "Web Developer";
   }
 }
 </style>
@@ -896,9 +905,9 @@ footer {
       </div>
 <div class="badge-float">🐍 Zoologist</div>
 <div class="badge-float">📊 Data Science</div>
-<div class="badge-float">🤖 Machine Learning</div>
-<div class="badge-float">🐍 Python Developer</div>
-<div class="badge-float">🤖 Web devloper</div>
+<!-- <div class="badge-float">🤖 Machine Learning</div>  -->
+<!-- <div class="badge-float">🐍 Python Developer</div> -->
+<!-- <div class="badge-float">🤖 Web devloper</div> -->
 <div class="badge-float">🧠 Deep Learning</div>
 </div>
 </div>
