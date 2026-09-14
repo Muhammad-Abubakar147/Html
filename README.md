@@ -140,3 +140,14 @@ The goal is to build a strong foundation in HTML before moving deeper into
 </p>
 
 ---
+<p align="center">
+
+### 🚀 Learn • Code • Build • Improve
+
+⭐ If you find this repository useful, consider giving it a star.
+
+</p>
+
+<p align="center">
+  Made with ❤️ by <strong>Muhammad Abubakar</strong>
+</p>
