@@ -37,3 +37,14 @@ The goal is to build a strong foundation in HTML before moving deeper into
 - Links
 - Images
 - Lists
+
+### 🧩 Forms & Input
+- Forms
+- Input Fields
+- Labels
+- Buttons
+- Checkboxes
+- Radio Buttons
+- Select & Option
+- Textarea
+- Form Validation
