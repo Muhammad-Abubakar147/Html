@@ -82,3 +82,40 @@ The goal is to build a strong foundation in HTML before moving deeper into
 - Semantic Web Structure
 
 ---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My HTML Page</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>About Me</h2>
+
+            <p>
+                I am learning HTML and building my web development
+                fundamentals through practical projects.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 My Website</p>
+    </footer>
+
+</body>
+
+</html>
