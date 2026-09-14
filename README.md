@@ -48,3 +48,11 @@ The goal is to build a strong foundation in HTML before moving deeper into
 - Select & Option
 - Textarea
 - Form Validation
+
+### 📊 Tables
+- Table Structure
+- Rows & Columns
+- Table Headers
+- Table Borders
+- `colspan`
+- `rowspan`
