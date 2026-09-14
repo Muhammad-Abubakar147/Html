@@ -14,3 +14,14 @@
   <img src="https://img.shields.io/badge/Web%20Development-000000?style=for-the-badge&logo=googlechrome&logoColor=white"/>
   <img src="https://img.shields.io/badge/Learning-In%20Progress-blue?style=for-the-badge"/>
 </p>
+---
+
+## 📌 About This Repository
+
+This repository contains my **HTML learning journey**, including concepts,
+practice files, examples, experiments, and small web-development projects.
+
+The goal is to build a strong foundation in HTML before moving deeper into
+**CSS, JavaScript, Frontend Development, and modern web technologies**.
+
+---
