@@ -56,3 +56,29 @@ The goal is to build a strong foundation in HTML before moving deeper into
 - Table Borders
 - `colspan`
 - `rowspan`
+
+### 🏗️ Semantic HTML5
+- `<header>`
+- `<nav>`
+- `<main>`
+- `<section>`
+- `<article>`
+- `<aside>`
+- `<footer>`
+
+### 🎬 Multimedia
+- Audio
+- Video
+- Iframes
+- Embedded Content
+
+### 🚀 Advanced Concepts
+- Meta Tags
+- SEO Basics
+- Accessibility
+- Responsive Structure
+- HTML5 APIs
+- Forms & Validation
+- Semantic Web Structure
+
+---
