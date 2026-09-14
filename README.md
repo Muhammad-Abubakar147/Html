@@ -134,6 +134,9 @@ The goal is to build a strong foundation in HTML before moving deeper into
 <a href="https://www.linkedin.com/in/muhammadabubakar147/">
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
+<a href="https://muhammad-abubakar147.netlify.app">
+  <img src="https://img.shields.io/badge/Portfolio-Visit%20Website-8A2BE2?style=for-the-badge&logo=googlechrome&logoColor=white"/>
+</a>
 </p>
 
 <p align="center">
