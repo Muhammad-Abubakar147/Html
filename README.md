@@ -25,3 +25,15 @@ The goal is to build a strong foundation in HTML before moving deeper into
 **CSS, JavaScript, Frontend Development, and modern web technologies**.
 
 ---
+## 🧠 Topics Covered
+
+### 🔰 HTML Fundamentals
+- HTML Document Structure
+- Headings
+- Paragraphs
+- Comments
+- Text Formatting
+- Attributes
+- Links
+- Images
+- Lists
